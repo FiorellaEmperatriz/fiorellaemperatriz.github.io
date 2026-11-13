@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly P&amp;L dashboard for multi-site restaurants | FinProBalance</title>
+  <meta name="description" content="Case study: an end-to-end weekly performance dashboard for a restaurant group, with KPIs, rule-based alerts and a manager submission form. Built with Google Sheets and Apps Script.">
+  <meta property="og:title" content="Weekly P&L dashboard for multi-site restaurants">
+  <meta property="og:description" content="Seeing margin problems while they are still small. Live demo and open code.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="assets/overview.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23072a19'/%3E%3Cpath d='M16 5c.9 6.2 4.8 10.1 11 11-6.2.9-10.1 4.8-11 11-.9-6.2-4.8-10.1-11-11 6.2-.9 10.1-4.8 11-11z' fill='%23fbf9f4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3c1 7 5 11 13 13-8 2-12 6-13 13-1-7-5-11-13-13 8-2 12-6 13-13z"/></svg></span>
+        FinProBalance
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html#project" aria-current="page">Project</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cs-hero">
+      <div class="wrap">
+        <a class="back" href="index.html">Back to the portfolio</a>
+        <h1>Seeing margin problems while they are still small</h1>
+        <p class="lede">A weekly performance dashboard for a restaurant group, built end to end: the data model, the calculations, the charts, the alerts and a form for site managers to submit their numbers.</p>
+        <div class="actions">
+          <a class="btn" href="https://script.google.com/macros/s/AKfycbyMzc75dI4BYynJJ15PxKmyhxITidL7y9AXTfSFqJVM9LGJr3X8PoR0-Zb_wiZFMH_8AQ/exec" target="_blank" rel="noopener">Open the live demo</a>
+          <a class="btn ghost" href="https://github.com/FiorellaEmperatriz/restaurant-pnl-dashboard" target="_blank" rel="noopener">View the code</a>
+        </div>
+        <p class="who">The demo uses fictional data for an invented company, Fennel &amp; Co. Group.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <figure class="cs-shot">
+        <div class="frame">
+          <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img src="assets/overview.png" width="1280" height="1060" alt="The dashboard overview for all three sites: sales, gross margin, labour and EBITDA, with trend charts and a ranking.">
+        </div>
+      </figure>
+
+      <section class="cs-section" aria-labelledby="problem">
+        <div class="cs-grid">
+          <h2 id="problem">The problem</h2>
+          <div class="cs-body">
+            <p>Multi-site hospitality owners often see how each site performed weeks after the fact, from spreadsheets that every manager formats differently. By the time a labour or food-cost problem shows up, it has already cost several weeks of margin.</p>
+            <p>The questions an owner needs answered every Monday are simple: which site is doing best and worst, whether labour or cost of goods is drifting from target, and whether it is a one-off or a trend.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="built">
+        <div class="cs-grid">
+          <h2 id="built">What I built</h2>
+          <div class="cs-body">
+            <ul>
+              <li><strong>One weekly P&amp;L per site</strong>, rolled up to group level, so sales, gross margin, labour % and EBITDA mean the same thing everywhere.</li>
+              <li><strong>A dashboard</strong> with week-on-week KPIs, trend charts against targets and a site ranking.</li>
+              <li><strong>A "what needs attention" panel</strong> driven by three plain rules, so a manager can see exactly why something was flagged.</li>
+              <li><strong>A submission form</strong> where each manager enters only their own site's week, with validation built in.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="found">
+        <div class="cs-grid">
+          <h2 id="found">What the data revealed</h2>
+          <div class="cs-body">
+            <p>In the demo data, one site's labour cost climbed from about 31% to 38% of sales over eleven weeks while its sales softened, which cut its EBITDA margin from around 16% to under 7%. Another site had a five-week food-cost spike that roughly halved its margin before recovering.</p>
+            <p>A monthly report would have averaged both away. The weekly view makes them obvious.</p>
+          </div>
+        </div>
+        <div class="pair">
+          <figure>
+            <div class="frame"><img src="assets/ember-street.png" width="1280" height="1060" loading="lazy" alt="Labour cost rising above target at one site."></div>
+            <figcaption>Labour above target while sales soften.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame"><img src="assets/tidewater.png" width="1280" height="1060" loading="lazy" alt="A five-week spike in cost of goods at another site."></div>
+            <figcaption>A five-week food-cost spike, then recovery.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="decisions">
+        <div class="cs-grid">
+          <h2 id="decisions">Decisions I made</h2>
+          <div class="cs-body">
+            <ul>
+              <li><strong>Calculated metrics, never typed-in ones.</strong> The sheet holds raw inputs only, so margins can never disagree with each other.</li>
+              <li><strong>Simple rules over fancy models.</strong> A site manager has to trust a flag before acting on it, and an explainable rule earns that trust.</li>
+              <li><strong>Phone-friendly from the start.</strong> Managers submit their numbers from a phone, so the form and the dashboard both work on a small screen.</li>
+            </ul>
+            <figure class="phone-shot">
+              <img src="assets/mobile.png" width="390" height="1800" loading="lazy" alt="The dashboard on a phone screen.">
+              <figcaption>The same dashboard on a phone.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="limits">
+        <div class="cs-grid">
+          <h2 id="limits">What I would change for real use</h2>
+          <div class="cs-body">
+            <ul>
+              <li>Replace the demo sign-in with Google accounts or an identity provider, and restrict the app to the organisation.</li>
+              <li>Add roles, so a manager sees their own site and the owner sees all of them.</li>
+              <li>Set targets per site, since a café and a full-service restaurant should not share one labour target.</li>
+              <li>Pull sales from the till system instead of typing them in.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section" aria-labelledby="stack">
+        <div class="cs-grid">
+          <h2 id="stack">Built with</h2>
+          <div class="cs-body">
+            <ul class="chips">
+              <li>Google Sheets</li>
+              <li>Google Apps Script</li>
+              <li>JavaScript</li>
+              <li>Chart.js</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>FinProBalance &copy; 2026 Fiorella Rojas</span>
+      <a href="index.html">Back to the portfolio</a>
+    </div>
+  </footer>
+</body>
+</html>
