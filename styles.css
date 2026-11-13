@@ -127,6 +127,25 @@ p { margin: 0; }
 .band .btn { padding: 14px 20px; }
 .fine { font-size: 0.88rem; color: rgba(251, 249, 244, 0.7); }
 
+/* -------------------------------------------------------- project cards -- */
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card { border: 1px solid var(--rule); border-radius: 18px; padding: clamp(22px, 3vw, 32px); background: #fff; }
+.card h3 { margin: 6px 0 10px; }
+.card p { color: var(--muted); }
+.card .tags { font-size: 0.88rem; color: var(--forest); font-weight: 500; margin: 0; }
+.card-lead { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; background: var(--forest-deep); border-color: var(--forest-deep); }
+.card-lead h3 { color: var(--cream); font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+.card-lead p { color: rgba(251, 249, 244, 0.86); }
+.card-lead .tags { color: #9fd3b5; }
+.card-lead .actions { margin-top: 22px; }
+.card-lead .btn { background: var(--cream); color: var(--forest-deep); border-color: var(--cream); padding: 13px 18px; }
+.card-lead .btn.ghost { background: transparent; color: var(--cream); }
+.card-lead .btn.ghost:hover, .card-lead .btn:hover { background: var(--mist); color: var(--forest-deep); border-color: var(--mist); }
+.card-lead :focus-visible { outline-color: var(--cream); }
+.card-lead .frame { border-color: transparent; }
+.card-soon { background: transparent; border-style: dashed; }
+.fine-dark { font-size: 0.88rem; color: var(--muted); margin-top: 18px; }
+
 /* --------------------------------------------------------- sections -- */
 .section { padding: clamp(56px, 8vw, 104px) 0; }
 .section-head { max-width: var(--measure); margin-bottom: clamp(28px, 4vw, 48px); }
@@ -182,6 +201,7 @@ p { margin: 0; }
 
 /* ----------------------------------------------------------- mobile -- */
 @media (max-width: 860px) {
+  .projects, .card-lead { grid-template-columns: minmax(0, 1fr); }
   .hero-grid, .band-grid, .about-grid, .contact-inner, .cs-grid { grid-template-columns: minmax(0, 1fr); }
   .rows li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .flag { position: static; width: 100%; margin-top: 14px; }
@@ -201,3 +221,5 @@ p { margin: 0; }
   .flag { animation: none; }
   .btn, .nav ul a { transition: none; }
 }
+
+.portrait { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 14px; margin-bottom: 22px; }
